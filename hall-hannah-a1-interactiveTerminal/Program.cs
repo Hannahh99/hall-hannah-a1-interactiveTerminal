@@ -1,12 +1,12 @@
-﻿//Ask for player name, remember it
-using System.Security.AccessControl;
+﻿using System.Security.AccessControl;
 
+//Ask for player name, remember it
 Console.Write("Enter Name: ");
 string playerName = Console.ReadLine();
 Console.WriteLine();
 
 //Print context story
-Console.WriteLine("  The fall fair is an event the town of ____ looks forward to annually. Your parents bring you along");
+Console.WriteLine("  The fall fair is an event the town of Autumnshield looks forward to annually. Your parents bring you along");
 Console.WriteLine(" with them and tell you to go have fun while they get something to eat. This year you're on your own it seems.");
 Console.WriteLine(" They give you some money to go purchase tickets and they head off. You approach the ticket booth.");
 Console.WriteLine();
@@ -85,7 +85,7 @@ if (playerTickets >= 0)
         if (ringTossOutcome == "Left")
         {
             Console.WriteLine();
-            Console.WriteLine("  You toss the ring, angling it to go left. He shoots, he scores!");
+            Console.WriteLine("  You toss the ring, angling it to go left.");
             Console.WriteLine(" 'Nice toss kiddo.' Says the man behind the counter as he hands you a prize. A little stuffed rabbit.");
             //add prize to inventory
             ringTossPrize = true;
@@ -139,6 +139,7 @@ if (playerChoice_2 == 1)
     Console.WriteLine("  It has been three months since you were last seen, at the fall fair. Winter settles in and the hope of finding you");
     Console.WriteLine(" alive has long since vanished. Your parents cooperate with authorities and do everything in their power");
     Console.WriteLine(" to track you down, but there is not a single trace to be found. Nobody even witnessed you leaving.");
+    Console.WriteLine("Ending 1/5");
 }
 //player refuses to follow
 else if (playerChoice_2 == 2)
@@ -154,26 +155,47 @@ else if (playerChoice_2 == 2)
     {
         Console.WriteLine(" 3. Throw prize as distraction");
     }
-
+    Console.WriteLine();
     int playerChoice_3 = int.Parse(Console.ReadLine());
     Console.WriteLine();
 
-    //player calls for help
+    //player calls for help --> game over: Ending 2
     if (playerChoice_3 == 1)
     {
-        Console.WriteLine("You call for help");
+        Console.WriteLine("  You shout for help, the noise gets drowned out by the screams of other festival goers having fun. However, one nearby");
+        Console.WriteLine(" group of people turn their attention to you, when they see the strange man grabbing you they rush over to assist,");
+        Console.WriteLine(" pulling them away and holding them down.");
+        Console.WriteLine();
+        Console.WriteLine(" You got lucky. Lucky they didn't think it to be a familial dispute. Lucky they interfered.");
+        Console.WriteLine(" The group calls security over and they apprehend the stranger. They then wait with you for your parents to return.");
+        Console.WriteLine("Ending 2/5");
     }
-    //player shoves the stranger
+    //player shoves the stranger --> game over: Ending 3
     else if (playerChoice_3 == 2)
     {
-        Console.WriteLine("You push them");
+        Console.WriteLine("  You push them and they fall over, onto their back. This gives you a chance to get away and you take it, rushing off.");
+        Console.WriteLine(" You run up to a security guard and inform them of the situation. But by the time you bring them back to where you left");
+        Console.WriteLine(" the stranger, they are gone. The guard seems to think you might have lied about the situation. But nevertheless,");
+        Console.WriteLine(" they help you find your parents and you return home safely.");
+        Console.WriteLine();
+        Console.WriteLine(" They never caught the stranger.");
+        Console.WriteLine("Ending 3/5");
     }
-    //player throws prize
+    //player throws prize --> game over: Ending 4
     else if (playerChoice_3 == 3)
     {
-        Console.WriteLine("You throw your prize at them");
+        Console.WriteLine("  You throw your prize at them and they flinch, you take this moment to turn and run away. You glance back to see the");
+        Console.WriteLine(" stranger coming after you. Rushing over to one of the security guards patrolling the area, you inform them of the");
+        Console.WriteLine(" situation. You point back to the stranger, who sees who you're speaking with and attempts to fade into the crowd.");
+        Console.WriteLine(" The guard, however, matched the description you gave to the stranger and tackles them, pushing them to the ground");
+        Console.WriteLine(" for apprehension.");
+        Console.WriteLine();
+        Console.WriteLine(" While everyone's focus is on the stranger you make your way to where you threw the prize. The plush is laying muddy on");
+        Console.WriteLine(" the floor of the fairgrounds. You pick it up and brush it off... Then you return to the guards and wait for your");
+        Console.WriteLine(" parents to return.");
+        Console.WriteLine("Ending 4/5");
     }
-    //player enters invalid response --> game over: Ending 3
+    //player enters invalid response --> game over: Ending 5
     else
     {
         Console.WriteLine(" You freeze, unsure of what to do... The stranger grabs you and drags you off.");
@@ -185,9 +207,10 @@ else if (playerChoice_2 == 2)
         Console.WriteLine(" to track you down, but there is not a single trace to be found. Nobody even witnessed you leaving.");
         Console.WriteLine();
         Console.WriteLine("... Maybe you should choose a valid option next time.");
+        Console.WriteLine("Ending 5/5");
     }
 }
-//player enters invalid response --> game over: Ending 3
+//player enters invalid response --> game over: Ending 5
 else
 {
     Console.WriteLine(" You freeze, unsure of what to do... The stranger grabs you and drags you off.");
@@ -199,4 +222,5 @@ else
     Console.WriteLine(" to track you down, but there is not a single trace to be found. Nobody even witnessed you leaving.");
     Console.WriteLine();
     Console.WriteLine("... Maybe you should choose a valid option next time.");
+    Console.WriteLine("Ending 5/5");
 }
